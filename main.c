@@ -1,6 +1,7 @@
 // TESTES "IS ALGUMA COISA"
+#include "libft.h"
 
-int main()
+int test_ft_isascii()
 {
 int var1 = 0x7F;
    int var2 = '2';
@@ -20,10 +21,8 @@ int var1 = 0x7F;
 
 
 // TESTE MEMSET -- PRECISA VER SE A ASSINATURA ESTA CORRETA
-#include <stdio.h>
-#include <string.h>
-
-int main () {
+int test_ft_memset ()
+{
    char str[50];
 
    strcpy(str,"This is string.h library function");
@@ -37,10 +36,6 @@ int main () {
 
 
 // TESTE MEMMOMVE
-
-#include <stdio.h>
-#include <string.h>
-
 int main () {
    char dest[] = "aaaaaaaaaaaaaaaa";
    const char src[]  = "123456789";
@@ -54,9 +49,6 @@ int main () {
 }
 
 //   TESTE MEMCPY
-#include <stdio.h>
-#include <string.h>
-
 int main () {
    const char src[50] = "http://www.tutorialspoint.com";
    char dest[50];
@@ -69,9 +61,6 @@ int main () {
 }
 
 // TESTE MEMCHR
-#include <stdio.h>
-#include <string.h>
-
 int main () {
    const char str[] = "http://www.tutorialspoint.com";
    const char ch = 't';
@@ -85,10 +74,6 @@ int main () {
 }
 
 // TESTE STRCHR
-
-#include <stdio.h>
-#include <string.h>
-
 int main () {
    const char str[] = "http://www.tutorialspoint.com";
    const char ch = 'h';
@@ -102,9 +87,6 @@ int main () {
 }
 
 // TESTE SRRCHR
-#include <stdio.h>
-#include <string.h>
-
 int main () {
    int len;
    const char str[] = "http://www.tutorialspoint.com";
@@ -119,10 +101,6 @@ int main () {
 }
 
 // teste STRNCMP
-
-#include <stdio.h>
-#include <string.h>
-
 int main () {
    char str1[15];
    char str2[15];
@@ -144,4 +122,3 @@ int main () {
    return(0);
 }
 
-//
