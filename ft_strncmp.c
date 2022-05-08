@@ -18,4 +18,3 @@ int ft_strncmp(const char *str1, const char *str2, size_t n)
     
         return (str1[i] - str2[i]);
 }
-// n - 1 para tirarmos a comparação do nulo.

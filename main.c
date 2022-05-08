@@ -122,3 +122,84 @@ int main () {
    return(0);
 }
 
+// teste STRNSTR
+
+int main () {
+   const char str[] = "Teste do Daniel Linda";
+   const char ch[] = "Daniel";
+
+	printf("String Haystack |%s| Needle - |%s|\n", str, ch);
+   printf("String Resultado %s \n",ft_strnstr(str, ch, ft_strlen(str)));
+   
+   return(0);
+}
+
+// teste STRLCAT
+int main () {
+   char str[] = "12345";
+   const char ch[] = "1114";
+
+	printf("String Haystack |%s| Needle - |%s|\n", str, ch);
+   printf("String Resultado %ld \n",ft_strlcat(str, ch, ft_strlen(str)));
+   
+   return(0);
+}
+
+// teste MEMMOVE
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main () {
+   char dest[] = "danielvargasssssss";
+   const char src[]  = "1234";
+
+   printf("Before memmove dest = %s, src = %s\n", dest, src);
+   memmove(dest, src, 3);
+   printf("After memmove dest = %s, src = %s\n", dest, src);
+
+
+
+   return(0);
+}
+
+// teste MEMcmP
+
+int main () {
+   char str1[15];
+   char str2[15];
+   int ret;
+
+   memcpy(str1, "bBCDEF", 6);
+   memcpy(str2, "ABCDEF", 6);
+
+   ret = ft_memcmp(str1, str2, 5);
+
+   if(ret > 0) {
+      printf("str2 is less than str1");
+   } else if(ret < 0) {
+      printf("str1 is less than str2");
+   } else {
+      printf("str1 is equal to str2");
+   }
+   
+   return(0);
+}
+
+// teste ATOI
+
+int main () {
+   int val;
+   char str[20];
+   
+   strcpy(str, "98993489");
+   val = ft_atoi(str);
+   printf("String value = %s, Int value = %d\n", str, val);
+
+   strcpy(str, "teste123");
+   val = ft_atoi(str);
+   printf("String value = %s, Int value = %d\n", str, val);
+
+   return(0);
+}
