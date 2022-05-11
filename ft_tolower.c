@@ -6,9 +6,3 @@ int ft_tolower(int c)
     c += 32;
     return (c);
 }
-
-int main()
-{
-    int var1 = 'Z';
-    printf("%c", ft_tolower(var1));
-}

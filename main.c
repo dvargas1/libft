@@ -1,205 +1,194 @@
-// TESTES "IS ALGUMA COISA"
 #include "libft.h"
 
-int test_ft_isascii()
+
+
+int	main(void)
 {
-int var1 = 0x7F;
-   int var2 = '2';
-    
-   if(ft_isascii(var1) ) {
-      printf("var1 = |%c| is a digit\n", var1 );
-   } else {
-      printf("var1 = |%c| is not a digit\n", var1 );
-   }
+	// TESTE ISALPHA
+	printf("\n---- isalpha ----\n");
+	printf("5 ft_isalpha : %d, real : %d\n", ft_isalpha('5'), isalpha('5'));
+	printf("p ft_isalpha : %d, real : %d\n", ft_isalpha('p'), isalpha('p'));
+	printf("O ft_isalpha : %d, real : %d\n", ft_isalpha('O'), isalpha('O'));
 
-      if(isascii(var1) ) {
-      printf("var1 = |%c| is a digit\n", var1 );
-   } else {
-      printf("var1 = |%c| is not a digit\n", var1 );
-   }
-}
+	// ESTE IS DIGIT
+	printf("\n---- isdigit ----\n");
+	printf("5 ft_isdigit : %d, real : %d\n", ft_isdigit('5'), isdigit('5'));
+	printf("p ft_isdigit : %d, real : %d\n", ft_isdigit('p'), isdigit('p'));
+	printf("0 ft_isdigit : %d, real : %d\n", ft_isdigit('0'), isdigit('0'));
 
+	// TESTE ISALNUM
+	printf("\n---- isalnum ----\n");
+	printf("5 ft_isalnum : %d, real : %d\n", ft_isalnum('5'), isalnum('5'));
+	printf("p ft_isalnum : %d, real : %d\n", ft_isalnum('p'), isalnum('p'));
+	printf("D ft_isalnum : %d, real : %d\n", ft_isalnum('D'), isalnum('D'));
+	printf("! ft_isalnum : %d, real : %d\n", ft_isalnum('!'), isalnum('!'));
 
-// TESTE MEMSET -- PRECISA VER SE A ASSINATURA ESTA CORRETA
-int test_ft_memset ()
-{
-   char str[50];
+	// TESTE ESASCII
+	printf("\n---- isascii ----\n");
+	printf("5 ft_isascii : %d, real : %d\n", ft_isascii('5'), isascii('5'));
+	printf("¡ ft_isascii : %d, real : %d\n", ft_isascii(0xA1), isascii(0xA1));
 
-   strcpy(str,"This is string.h library function");
-   puts(str);
+	// TESTE ISPRINT
+	printf("\n---- isprint ----\n");
+	printf("5 ft_isprint : %d, real : %d\n", ft_isprint('5'), isprint('5'));
+	printf("¡ ft_isprint : %d, real : %d\n", ft_isprint(0xA1), isprint(0xA1));
 
-   ft_memset(str,'a',15);
-   puts(str);
-   
-   return(0);
-}
+	// TESTE STRLEN
+	printf("\n---- strlen ----\n");
+	printf("\"Olá Eu sou o Goku\" ft_strlen : %zu, real : %zu\n", ft_strlen("Olá Eu sou o Goku"), strlen("Olá Eu sou o Goku"));
+	printf("\"\" ft_strlen : %zu, real : %zu\n", ft_strlen(""), strlen(""));
 
+	// TESTE MEMSET 
+	printf("\n---- memset ----\n");
+	char str_real[50];
+	strcpy(str_real, "Oi 42");
+	memset(str_real, '-', 20);
+	char str_test[50];
+	strcpy(str_test, "Oi 42");
+	ft_memset(str_test, '-', 20);
+	printf("\"Oi 42\" memset ('-', 20) : %s, ft_memset : %s\n", str_test, str_real);
 
-// TESTE MEMMOMVE
-int main () {
-   char dest[] = "aaaaaaaaaaaaaaaa";
-   const char src[]  = "123456789";
+	// TESTE BZERO
+	printf("\n---- bzero ----\n");
+	char str_real2[50];
+	strcpy(str_real2, "Hello 42");
+	bzero(str_real2, 6);
+	char str_test2[50];
+	strcpy(str_test2, "Hello 42");
+	ft_bzero(str_test2, 6);
+	printf("\"Hello 42\" bzero (6) bzero: %s seventh char : %c, ft_bzero : %s seventh char : %c\n", str_test2, str_test2[6], str_real2, str_real2[6]);
 
+	// TESTE MEMCPY
+	printf("\n---- memcpy ----\n");
+	char src_real1[50];
+	char src_test1[50];
+	char dest_real1[50];
+	char dest_test1[50];
+	strcpy(src_real1, "Daniel de Abreu Vargas");
+	strcpy(src_test1, "Daniel de Abreu Vargas");
+	strcpy(dest_real1, "Luna Lima Vargas");
+	strcpy(dest_test1, "Luna Lima Vargas");
+	printf("src content : %s, dest content : %s\n", src_real1, dest_real1);
+	memcpy(dest_real1, src_real1, 6);
+	ft_memcpy(dest_test1, src_test1, 6);
+	printf("memcpy (dest, src, 6) ft_memcpy: %s real_memcpy : %s\n", dest_test1, dest_real1);
 
-   printf("Before memmove dest = %s, src = %s\n", dest, src);
-   memmove(dest, src, 5);
-   printf("After memmove dest = %s, src = %s\n", dest, src);
+	// TESTE MEMMOVE
+	printf("\n---- memmove ----\n");
+	char str_test7[] = "Esse teste aqui ta dando ruim!";
+	char str_real7[] = "Esse teste aqui ta dando ruim!";
+	char str_dest18[] = "eeeeeeeeeeee";
+	ft_memmove(str_test7, str_dest18, 11);
+	memmove(str_real7, str_dest18, 11);
+	printf("Real : %s\n", str_real7);
+	printf("Test : %s\n", str_test7);
 
-   return(0);
-}
+	printf("\n---- TESTE 2 memmove ----\n");
+	printf("\nstr1 : Vousumir, str2 : Toaqui\n");
+	char str1_test8[] = "Vousumir";
+	char str1_real8[] = "Vousumir";
+    char str2_test8[] = "Toaqui";
+    char str2_real8[] = "Toaqui";
+    ft_memmove(str1_test8, str2_test8, sizeof(str2_test8));
+    memmove(str1_real8, str2_real8, sizeof(str2_real8));
+	printf("    Real, str1 : %s, str2 : %s\n", str1_real8, str2_real8);
+	printf("    Test, str1 : %s, str2 : %s\n", str1_test8, str2_test8);
 
-//   TESTE MEMCPY
-int main () {
-   const char src[50] = "http://www.tutorialspoint.com";
-   char dest[50];
-   strcpy(dest,"Heloooo!!");
-   printf("Before memcpy dest = %s\n", dest);
-   ft_memcpy(dest, src, 5);
-   printf("After memcpy dest = %s\n", dest);
-   
-   return(0);
-}
+	// TESTE STRLCPY
+	printf("\n---- strlcpy ---\n");
+	char src_strcpy[] = "Daniel de Abreu Vargas";
+    char dest_test2[19];
+    int src_test2_s;
+    src_test2_s = ft_strlcpy(dest_test2, src_strcpy, 5);
+    printf("Test : Copied '%s' into '%s', length %d\n", src_strcpy, dest_test2, src_test2_s);
 
-// TESTE MEMCHR
-int main () {
-   const char str[] = "http://www.tutorialspoint.com";
-   const char ch = 't';
-   char *ret;
+	// TESTE STRLCAT
+	printf("\n---- strlcat ----\n");
+	char src_strcat[] = "Eu sou o Goku !";
+    char dest_test6[19];
+    int src_test6_s;
+	strcpy(dest_test6, "Olá, ");
+    src_test6_s = ft_strlcat(dest_test6, src_strcat, 9);
+    printf("Test : Added '%s' : '%s', length %d\n", src_strcat, dest_test6, src_test6_s);
 
-   ret = ft_memchr(str, ch, strlen(str));
+	// TESTE TOUPPER
+	printf("\n---- toupper ----\n");
+	printf("d, A, 5, n, E toupper : %c, %c, %c, %c, %c\n", ft_toupper('d'), ft_toupper('A'), ft_toupper('5'), ft_toupper('n'), ft_toupper('E'));
 
-   printf("String after |%c| is - |%s|\n", ch, ret);
+	// TESTE TOLOWER
+	printf("\n---- tolower ----\n");
+	printf("L, U, 5, N, A tolower : %c, %c, %c, %c, %c\n", ft_tolower('L'), ft_tolower('U'), ft_tolower('5'), ft_tolower('N'), ft_tolower('A'));
 
-   return(0);
-}
+	// TESTE STRCHR
+	printf("\n---- strchr ----\n");
+	char str_real3[50];
+	strcpy(str_real3, "Teste fajuto numero 1");
+	char *pos_real1 = strchr(str_real3, 'o');
+	char *pos_test1 = ft_strchr(str_real3, 'o');
+	printf("str : %s : strchr : %s real : %s\n", str_real3, pos_test1, pos_real1);
 
-// TESTE STRCHR
-int main () {
-   const char str[] = "http://www.tutorialspoint.com";
-   const char ch = 'h';
-   char *ret;
+	// TESTE STRRCHR
+	printf("\n---- strrchr ----\n");
+	char str_real4[50];
+	strcpy(str_real4, "Teste fajuto numero 2");
+	char *pos_real2 = strrchr(str_real4, 'e');
+	char *pos_test2 = ft_strrchr(str_real4, 'e');
+	printf("str : %s : strrchr : %s real : %s\n", str_real4, pos_test2, pos_real2);
 
-   ret = ft_strchr(str, ch);
+	// TESTE STRNCMP
+	printf("\n---- strncmp ----\n");
+	printf("(\"abcdef\", \"ABCDEF\", 2) : %d, real : %d\n", ft_strncmp("abcdef", "ABCDEF", 2), strncmp("abcdef", "ABCDEF", 2));
+	printf("(\"abcdef\", \"abcdef\", 2) : %d, real : %d\n", ft_strncmp("abcdef", "abcdef", 2), strncmp("abcdef", "abcdef", 2));
+	printf("(\"abcdef\", \"abcdey\", 5) : %d, real : %d\n", ft_strncmp("abcdef", "abcdey", 5), strncmp("abcdef", "abcdey", 5));
+	printf("(\"abcdef\", \"abcdey\", 6) : %d, real : %d\n", ft_strncmp("abcdef", "abcdey", 6), strncmp("abcdef", "abcdey", 6));
+	printf("(\"\\200\", \"\\0\", 6) : %d, real : %d\n", ft_strncmp("\200", "\0", 6), strncmp("\200", "\0", 6));
 
-   printf("String after |%c| is - |%s|\n", ch, ret);
-   
-   return(0);
-}
+	// TESTE MEMCHR
+	printf("\n---- memchr ----\n");
+	char str_real5[50];
+	strcpy(str_real5, "Hello 42 !");
+	char *pos_real3 = memchr(str_real5, 'o', 5);
+	char *pos_test3 = ft_memchr(str_real5, 'o', 5);
+	printf("str : %s : memchr : %s, real : %s\n", str_real5, pos_test3, pos_real3);
 
-// TESTE SRRCHR
-int main () {
-   int len;
-   const char str[] = "http://www.tutorialspoint.com";
-   const char ch = 'w';
-   char *ret;
+	// TESTE MEMCMP
+	printf("\n---- memcmp ----\n");
+	printf("(\"abcdef\", \"ABCDEF\", 2) : %d, real : %d\n", ft_memcmp("abcdef", "ABCDEF", 2), memcmp("abcdef", "ABCDEF", 2));
+	printf("(\"abcdef\", \"abcdef\", 2) : %d, real : %d\n", ft_memcmp("abcdef", "abcdef", 2), memcmp("abcdef", "abcdef", 2));
+	printf("(\"abcdef\", \"abcdey\", 5) : %d, real : %d\n", ft_memcmp("abcdef", "abcdey", 5), memcmp("abcdef", "abcdey", 5));
+	printf("(\"abcdef\", \"abcdey\", 6) : %d, real : %d\n", ft_memcmp("abcdef", "abcdey", 6), memcmp("abcdef", "abcdey", 6));	
+	printf("(\"\\200\", \"\\0\", 6) : %d, real : %d\n", ft_memcmp("\200", "\0", 6), memcmp("\200", "\0", 6));
 
-   ret = ft_strrchr(str, ch);
+ 	// TESTE STRNSTR
+	/*printf("\n---- strnstr ----\n");
+	printf("hay = 'Hello 42', need = '', len = 4 : %s, real : %s\n", ft_strnstr("Hello 42", "", 4), strnstr("Hello 42", "", 4));
+	printf("hay = 'Hello 42', need = 'lo', len = 5 : %s, real : %s\n", ft_strnstr("Hello 42", "lo", 5), strnstr("Hello 42", "lo", 5));
+	printf("hay = 'Hello 42', need = 'lo', len = 100 : %s, real : %s\n", ft_strnstr("Hello 42", "lo", 100), strnstr("Hello 42", "lo", 100));
+	printf("hay = 'Hello 42', need = 'uiok', len = 100 : %s, real : %s\n", ft_strnstr("Hello 42", "uiok", 100), strnstr("Hello 42", "uiok", 100)); */
 
-   printf("String after |%c| is - |%s|\n", ch, ret);
-   
-   return(0);
-}
+	// TESTE ATOI
+	printf("\n---- atoi ----\n");
+	printf("'9985' : %d, real : %d\n", ft_atoi("9985"), atoi("9985"));
+	printf("'-9985' : %d, real : %d\n", ft_atoi("-9985"), atoi("-9985"));
+	printf("'   +9985' : %d, real : %d\n", ft_atoi("   +9985"), atoi("   +9985"));
+	printf("'   +-+9985' : %d, real : %d\n", ft_atoi("   +-+9985"), atoi("   +-+9985"));
+	printf("' y  +-+9985' : %d, real : %d\n", ft_atoi(" y  +-+9985"), atoi(" y  +-+9985"));
+	printf("'   99o85' : %d, real : %d\n", ft_atoi("   99o85"), atoi("   99o85"));
+	printf("'o' : %d, real : %d\n", ft_atoi("o"), atoi("o"));
 
-// teste STRNCMP
-int main () {
-   char str1[15];
-   char str2[15];
-   int ret;
+    // TESTE CALLOC
+	printf("\n---- calloc ----\n");
+    int j = 32;
+	int	*calloc_test;
+	calloc_test = (int *)ft_calloc(j, sizeof(int));
+	printf("Calloc em uma array com %i int\n", j);
+	for(int i = 0; i < j; i++)
+		printf("%d ", calloc_test[i]);
+	printf("\n");
+	free(calloc_test);
 
-   strcpy(str1, "ABCDEF");
-   strcpy(str2, "abcdef");
-
-   ret = ft_strncmp(str1, str2, 4);
-
-   if(ret < 0) {
-      printf("str1 is less than str2");
-   } else if(ret > 0) {
-      printf("str2 is less than str1");
-   } else {
-      printf("str1 is equal to str2");
-   }
-   
-   return(0);
-}
-
-// teste STRNSTR
-
-int main () {
-   const char str[] = "Teste do Daniel Linda";
-   const char ch[] = "Daniel";
-
-	printf("String Haystack |%s| Needle - |%s|\n", str, ch);
-   printf("String Resultado %s \n",ft_strnstr(str, ch, ft_strlen(str)));
-   
-   return(0);
-}
-
-// teste STRLCAT
-int main () {
-   char str[] = "12345";
-   const char ch[] = "1114";
-
-	printf("String Haystack |%s| Needle - |%s|\n", str, ch);
-   printf("String Resultado %ld \n",ft_strlcat(str, ch, ft_strlen(str)));
-   
-   return(0);
-}
-
-// teste MEMMOVE
-
-
-#include <stdio.h>
-#include <string.h>
-
-int main () {
-   char dest[] = "danielvargasssssss";
-   const char src[]  = "1234";
-
-   printf("Before memmove dest = %s, src = %s\n", dest, src);
-   memmove(dest, src, 3);
-   printf("After memmove dest = %s, src = %s\n", dest, src);
-
-
-
-   return(0);
-}
-
-// teste MEMcmP
-
-int main () {
-   char str1[15];
-   char str2[15];
-   int ret;
-
-   memcpy(str1, "bBCDEF", 6);
-   memcpy(str2, "ABCDEF", 6);
-
-   ret = ft_memcmp(str1, str2, 5);
-
-   if(ret > 0) {
-      printf("str2 is less than str1");
-   } else if(ret < 0) {
-      printf("str1 is less than str2");
-   } else {
-      printf("str1 is equal to str2");
-   }
-   
-   return(0);
-}
-
-// teste ATOI
-
-int main () {
-   int val;
-   char str[20];
-   
-   strcpy(str, "98993489");
-   val = ft_atoi(str);
-   printf("String value = %s, Int value = %d\n", str, val);
-
-   strcpy(str, "teste123");
-   val = ft_atoi(str);
-   printf("String value = %s, Int value = %d\n", str, val);
-
-   return(0);
+	// TESTE strdup
+	printf("\n---- strdup ----\n");
+	char *str9 = "Luna é a mais linda do universo";
+	printf("Original : %s, Dup : %s\n", str9, ft_strdup(str9));
 }

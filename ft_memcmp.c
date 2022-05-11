@@ -12,7 +12,7 @@ int ft_memcmp(const void *str1, const void *str2, size_t n)
 
     while (s1[i] && s2[i])
     {
-        if(s1[i] != s2[i] || i < (n - 1))
+        if(s1[i] != s2[i] || i <= (n - 1))
         {
             return (s1[i] - s2[i]);
             i++;
@@ -20,3 +20,4 @@ int ft_memcmp(const void *str1, const void *str2, size_t n)
     }
     return(s1[i] - s2[i]);
 }
+
