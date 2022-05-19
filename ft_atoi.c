@@ -12,14 +12,14 @@ int	ft_atoi(const char *str)
 	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n'
 		|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v' || str[i] == '+')
 		i++;
-    while (str[i] == '-')
-    {
-        if (str[i] == '-')
+	while (str[i] == '-')
+	{
+		if (str[i] == '-')
 		{
-            mult *= -1;
+			mult *= -1;
 		}
-            i++;
-    }
+			i++;
+	}
 	while (ft_isdigit(str[i]))
 	{
 		nb = (nb * 10) + (str[i] - '0');

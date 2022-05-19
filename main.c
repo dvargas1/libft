@@ -94,23 +94,6 @@ int	main(void)
 	printf("    Real, str1 : %s, str2 : %s\n", str1_real8, str2_real8);
 	printf("    Test, str1 : %s, str2 : %s\n", str1_test8, str2_test8);
 
-	// TESTE STRLCPY
-	printf("\n---- strlcpy ---\n");
-	char src_strcpy[] = "Daniel de Abreu Vargas";
-    char dest_test2[19];
-    int src_test2_s;
-    src_test2_s = ft_strlcpy(dest_test2, src_strcpy, 5);
-    printf("Test : Copied '%s' into '%s', length %d\n", src_strcpy, dest_test2, src_test2_s);
-
-	// TESTE STRLCAT
-	printf("\n---- strlcat ----\n");
-	char src_strcat[] = "Eu sou o Goku !";
-    char dest_test6[19];
-    int src_test6_s;
-	strcpy(dest_test6, "Olá, ");
-    src_test6_s = ft_strlcat(dest_test6, src_strcat, 9);
-    printf("Test : Added '%s' : '%s', length %d\n", src_strcat, dest_test6, src_test6_s);
-
 	// TESTE TOUPPER
 	printf("\n---- toupper ----\n");
 	printf("d, A, 5, n, E toupper : %c, %c, %c, %c, %c\n", ft_toupper('d'), ft_toupper('A'), ft_toupper('5'), ft_toupper('n'), ft_toupper('E'));
@@ -159,12 +142,42 @@ int	main(void)
 	printf("(\"abcdef\", \"abcdey\", 6) : %d, real : %d\n", ft_memcmp("abcdef", "abcdey", 6), memcmp("abcdef", "abcdey", 6));	
 	printf("(\"\\200\", \"\\0\", 6) : %d, real : %d\n", ft_memcmp("\200", "\0", 6), memcmp("\200", "\0", 6));
 
+	printf("\n ---- PROBLEMATICOS ------\n");
+   // TESTE STRLCPY
+	printf("\n---- strlcpy ---\n");
+	char src_strcpy[] = "Daniel de Abreu Vargas";
+    char dest_test2[19];
+	char dest_real2[19];
+	int src_real2_s;
+    int src_test2_s;
+    src_test2_s = ft_strlcpy(dest_test2, src_strcpy, 5);
+	src_real2_s = strlcpy(dest_real2, src_strcpy, 5);
+    printf("Test : Copied '%s' into '%s', length %d\n", src_strcpy, dest_test2, src_test2_s);
+	printf("Real : Copied '%s' into '%s', lenght %d\n", src_strcpy, dest_real2, src_real2_s); 
+
+     // TESTE STRLCAT
+     printf("\n---- strlcat ----\n");
+     char src_strcat[] = "Eu sou o Goku !";
+	 char src_strcat2[] = "Eu sou o Goku !";
+     char dest_test6[19];
+	 char dest_real6[19];
+	 int src_real6_s;
+     int src_test6_s;
+
+     strcpy(dest_test6, "Olá, ");
+     strcpy(dest_real6, "Olá, ");
+	 src_real6_s = strlcat (dest_real6, src_strcat, 9);
+	 src_test6_s = ft_strlcat(dest_test6, src_strcat, 9);
+     printf("Test : Added '%s' : '%s', length %d\n", src_strcat, dest_test6, src_test6_s);
+	 printf("Real : Added '%s' : '%s', lenght %d\n", src_strcat2, dest_real6, src_real6_s);
+	
+
  	// TESTE STRNSTR
-	/*printf("\n---- strnstr ----\n");
+	printf("\n---- strnstr ----\n");
 	printf("hay = 'Hello 42', need = '', len = 4 : %s, real : %s\n", ft_strnstr("Hello 42", "", 4), strnstr("Hello 42", "", 4));
 	printf("hay = 'Hello 42', need = 'lo', len = 5 : %s, real : %s\n", ft_strnstr("Hello 42", "lo", 5), strnstr("Hello 42", "lo", 5));
 	printf("hay = 'Hello 42', need = 'lo', len = 100 : %s, real : %s\n", ft_strnstr("Hello 42", "lo", 100), strnstr("Hello 42", "lo", 100));
-	printf("hay = 'Hello 42', need = 'uiok', len = 100 : %s, real : %s\n", ft_strnstr("Hello 42", "uiok", 100), strnstr("Hello 42", "uiok", 100)); */
+	printf("hay = 'Hello 42', need = 'uiok', len = 100 : %s, real : %s\n", ft_strnstr("Hello 42", "uiok", 100), strnstr("Hello 42", "uiok", 100)); 
 
 	// TESTE ATOI
 	printf("\n---- atoi ----\n");
@@ -178,7 +191,7 @@ int	main(void)
 
     // TESTE CALLOC
 	printf("\n---- calloc ----\n");
-    int j = 32;
+    int j = 0;
 	int	*calloc_test;
 	calloc_test = (int *)ft_calloc(j, sizeof(int));
 	printf("Calloc em uma array com %i int\n", j);
