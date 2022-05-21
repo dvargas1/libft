@@ -50,13 +50,11 @@ int	main(void)
 
 	// TESTE BZERO
 	printf("\n---- bzero ----\n");
-	char str_real2[50];
-	strcpy(str_real2, "Hello 42");
+	char str_real2[50] = "Olá 42!";
 	bzero(str_real2, 6);
-	char str_test2[50];
-	strcpy(str_test2, "Hello 42");
+	char str_test2[50] = "Olá 42!";
 	ft_bzero(str_test2, 6);
-	printf("\"Hello 42\" bzero (6) bzero: %s seventh char : %c, ft_bzero : %s seventh char : %c\n", str_test2, str_test2[6], str_real2, str_real2[6]);
+	printf("\"Hello 42\" bzero (6) bzero: %s, seventh char : %i ft_bzero : %s seventh char : %i\n", str_test2, str_test2[6], str_real2, str_real2[6]);
 
 	// TESTE MEMCPY
 	printf("\n---- memcpy ----\n");
@@ -147,37 +145,36 @@ int	main(void)
 	printf("\n---- strlcpy ---\n");
 	char src_strcpy[] = "Daniel de Abreu Vargas";
     char dest_test2[19];
-	char dest_real2[19];
-	int src_real2_s;
+	//char dest_real2[19];
+	//int src_real2_s;
     int src_test2_s;
     src_test2_s = ft_strlcpy(dest_test2, src_strcpy, 5);
-	src_real2_s = strlcpy(dest_real2, src_strcpy, 5);
+	//src_real2_s = strlcpy(dest_real2, src_strcpy, 5);
     printf("Test : Copied '%s' into '%s', length %d\n", src_strcpy, dest_test2, src_test2_s);
-	printf("Real : Copied '%s' into '%s', lenght %d\n", src_strcpy, dest_real2, src_real2_s); 
+	//printf("Real : Copied '%s' into '%s', lenght %d\n", src_strcpy, dest_real2, src_real2_s); 
 
      // TESTE STRLCAT
      printf("\n---- strlcat ----\n");
      char src_strcat[] = "Eu sou o Goku !";
-	 char src_strcat2[] = "Eu sou o Goku !";
-     char dest_test6[19];
-	 char dest_real6[19];
-	 int src_real6_s;
+	 char dest_test6[19];
+	 //char dest_real6[19];
+	 //int src_real6_s;
      int src_test6_s;
 
      strcpy(dest_test6, "Olá, ");
-     strcpy(dest_real6, "Olá, ");
-	 src_real6_s = strlcat (dest_real6, src_strcat, 9);
+     //strcpy(dest_real6, "Olá, ");
+	 //src_real6_s = strlcat (dest_real6, src_strcat, 9);
 	 src_test6_s = ft_strlcat(dest_test6, src_strcat, 9);
      printf("Test : Added '%s' : '%s', length %d\n", src_strcat, dest_test6, src_test6_s);
-	 printf("Real : Added '%s' : '%s', lenght %d\n", src_strcat2, dest_real6, src_real6_s);
+	 //printf("Real : Added '%s' : '%s', lenght %d\n", src_strcat2, dest_real6, src_real6_s);
 	
 
  	// TESTE STRNSTR
-	printf("\n---- strnstr ----\n");
-	printf("hay = 'Hello 42', need = '', len = 4 : %s, real : %s\n", ft_strnstr("Hello 42", "", 4), strnstr("Hello 42", "", 4));
-	printf("hay = 'Hello 42', need = 'lo', len = 5 : %s, real : %s\n", ft_strnstr("Hello 42", "lo", 5), strnstr("Hello 42", "lo", 5));
-	printf("hay = 'Hello 42', need = 'lo', len = 100 : %s, real : %s\n", ft_strnstr("Hello 42", "lo", 100), strnstr("Hello 42", "lo", 100));
-	printf("hay = 'Hello 42', need = 'uiok', len = 100 : %s, real : %s\n", ft_strnstr("Hello 42", "uiok", 100), strnstr("Hello 42", "uiok", 100)); 
+	//printf("\n---- strnstr ----\n");
+	//printf("hay = 'Hello 42', need = '', len = 4 : %s, real : %s\n", ft_strnstr("Hello 42", "", 4), strnstr("Hello 42", "", 4));
+	//printf("hay = 'Hello 42', need = 'lo', len = 5 : %s, real : %s\n", ft_strnstr("Hello 42", "lo", 5), strnstr("Hello 42", "lo", 5));
+	//printf("hay = 'Hello 42', need = 'lo', len = 100 : %s, real : %s\n", ft_strnstr("Hello 42", "lo", 100), strnstr("Hello 42", "lo", 100));
+	//printf("hay = 'Hello 42', need = 'uiok', len = 100 : %s, real : %s\n", ft_strnstr("Hello 42", "uiok", 100), strnstr("Hello 42", "uiok", 100)); 
 
 	// TESTE ATOI
 	printf("\n---- atoi ----\n");
@@ -204,4 +201,15 @@ int	main(void)
 	printf("\n---- strdup ----\n");
 	char *str9 = "Luna é a mais linda do universo";
 	printf("Original : %s, Dup : %s\n", str9, ft_strdup(str9));
+
+    //TESTE substr
+    printf("\n--- substr ---\n");
+    char ft_substrteste[50] = "Ola Mundo!";
+    printf("Teste é feio mas Ola %s\n", ft_substr(ft_substrteste, 4, 5));
+
+    //TESTE STRJOIN
+    printf("\n--- strjoin ---\n");
+    char ft_strjointeste1[20] = "Olá";
+    char ft_strjointeste2[20] = " Mundo";
+    printf("%s\n", ft_strjoin(ft_strjointeste1, ft_strjointeste2));
 }
