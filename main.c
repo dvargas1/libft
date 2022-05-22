@@ -212,4 +212,24 @@ int	main(void)
     char ft_strjointeste1[20] = "Olá";
     char ft_strjointeste2[20] = " Mundo";
     printf("%s\n", ft_strjoin(ft_strjointeste1, ft_strjointeste2));
+
+    //TESTE STRTRIM
+    printf("\n---STRTRIM---\n");
+    char teste[20] = "@//--12345--@/5-";
+    char teste2[20] = "-@/";
+    printf("%s\n", ft_strtrim(teste,teste2));
+
+    //TESTE ITOA
+	printf("\n---- ITOA ----\n");
+	printf("'9985' : %s\n", ft_itoa(9985));
+	printf("'-9985' : %s\n", ft_itoa(-9985));
+	printf("'-42568' : %s\n", ft_itoa(-42568));
+	printf("'42568' : %s\n", ft_itoa(42568));
+
+
+
+
+
+
+
 }

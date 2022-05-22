@@ -6,7 +6,7 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 16:54:58 by dvargas           #+#    #+#             */
-/*   Updated: 2022/05/20 17:12:36 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/05/21 17:05:19 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ char *ft_strjoin(char const *s1, char const *s2)
         newstr[i + j] = s2[j];
         j++;
     }
+    newstr[i + j] = '\0';
     return (newstr);
 }
