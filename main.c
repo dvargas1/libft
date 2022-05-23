@@ -1,6 +1,19 @@
 #include "libft.h"
 
+char to_lowermapi(unsigned int i, char a)
+{
+    (void)i;
+    if (a >= 'A' && a <= 'Z')
+        a += 32;
+    return(a);
+}
 
+void to_upperteri(unsigned int i, char *a)
+{
+    (void)i;
+    if (*a >= 'a' && *a <= 'z')
+        *a = *a - 32;
+}
 
 int	main(void)
 {
@@ -226,8 +239,17 @@ int	main(void)
 	printf("'-42568' : %s\n", ft_itoa(-42568));
 	printf("'42568' : %s\n", ft_itoa(42568));
 
+    //TESTE striteri
+    printf("\n--- striteri ---\n");
+    printf("vamos testar isso aqui, agora passando a funcao = ");
+    char charstriteri[35] = "vamos testar isso aqui";
+    ft_striteri(charstriteri, to_upperteri);
+    printf("%s\n", charstriteri);
 
-
+    //TESTE strmapi
+    printf("\n--- strmapi ---\n");
+        char charstrmapi[35] = "VAMOS TESTAR ISSO AQUI";
+    printf("VAMOS TESTAR ISSO AQUI, agora passando a funcao = %s \n", ft_strmapi(charstrmapi, to_lowermapi));
 
 
 
