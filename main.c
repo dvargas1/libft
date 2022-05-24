@@ -251,6 +251,30 @@ int	main(void)
         char charstrmapi[35] = "VAMOS TESTAR ISSO AQUI";
     printf("VAMOS TESTAR ISSO AQUI, agora passando a funcao = %s \n", ft_strmapi(charstrmapi, to_lowermapi));
 
+	// TESTE putchar_FD
+	printf("\n--- putchar_fd ---\n");
+	ft_putchar_fd('a',1);	
+	ft_putchar_fd('\n',1);
+
+	//TESTE putstr_FD
+	printf("\n--- putstr_fd ---\n");
+	ft_putstr_fd("fancy putstr", 1);
+	ft_putchar_fd('\n',1);
+
+	//TESTE putendl_FD
+	printf("\n--- putendl_fd ---\n");
+	ft_putendl_fd("putendl fancy", 1);
+
+	//TESTE putnbr_FD
+	printf("\n--- putnbr_fd ---\n");
+	ft_putnbr_fd(42,1);
+	ft_putchar_fd('\n',1);
+	ft_putnbr_fd(-42,1);
+	ft_putchar_fd('\n',1);
+	ft_putnbr_fd(-1134142,1);
+	ft_putchar_fd('\n',1);
+	ft_putnbr_fd(3333142,1);
+	ft_putchar_fd('\n',1);
 
 
 
