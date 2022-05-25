@@ -6,7 +6,7 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:54:38 by dvargas           #+#    #+#             */
-/*   Updated: 2022/05/23 21:01:06 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/05/25 00:54:10 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,4 @@ char **ft_split(char const *s, char c)
 	}
 	str[j] [k] = '\0';
 	return (str);
-}
-
-int main ()
-{
-	char** teste1 = ft_split("vamositestariessaiparada", 'i');
-	
-	int i = 0;
-	while (i < 4)
-	{
-	printf("nivel do char[%i] = %s \n", i, teste1[i]);
-	i++;
-	}
 }

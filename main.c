@@ -276,6 +276,13 @@ int	main(void)
 	ft_putnbr_fd(3333142,1);
 	ft_putchar_fd('\n',1);
 
-
-
+	//TESTE Split
+	printf("\n--- ft_split ---\n");
+	char** testesplit = ft_split("vamositestariessaifuncao", 'i');
+	int ts = 0;
+	while(ts < 4)
+	{
+		printf("posicao na array[%i] = %s\n", ts, testesplit[ts]);
+		ts++;
+	}
 }
