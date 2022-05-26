@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtim.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 16:21:49 by dvargas           #+#    #+#             */
-/*   Updated: 2022/05/21 20:15:16 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/05/26 19:41:38 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int ft_inset(char c, char const *set)
     size_t i;
 
     i = 0;
-    while (set[i])
+    while (set[i] && set[i] != c)
     {
-        if (set[i] == c)
-            return(1);
         i++;
     }
+    if (set[i] == c)
+		return(1);
     return (0);
 }
 
@@ -32,15 +32,14 @@ char *ft_strtrim (char const *s1, char const *set)
     size_t i;
     size_t j;
 
+	if (!s1 || !set)
+		return ((char*) s1);
     j = ft_strlen(s1);
     i = 0;
     while(s1[i] && ft_inset(s1[i],set))
             i++;
-    printf("%li", i);
-    printf("%li\n", j);
-    while(ft_inset(s1[j - 1], set) && i < j)
+    while(ft_inset(s1[j - 1], set) && i <= j)
             j--;
-    printf("%li\n", j);
     trim = ft_substr(s1, i, j - i);
     return (trim);
 }

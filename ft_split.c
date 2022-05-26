@@ -6,7 +6,7 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:54:38 by dvargas           #+#    #+#             */
-/*   Updated: 2022/05/25 22:06:47 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/05/26 19:29:54 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char **ft_split(char const *s, char c)
 		while (s[i] && !is_sep(s[i], c))
 			i++;
 	}
-	str[j] = '\0';
+	//str[j] = '\0';
 	return (str);
 }
 

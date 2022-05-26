@@ -7,10 +7,11 @@ void	*ft_memset(void *str, int c, size_t n)
 
 	i = 0;
 	s = str;
-	while (n > i)
+	while (n)
 	{
 		s[i] = c;
 		i++;
+		n--;
 	}
 	return (s);
 }
