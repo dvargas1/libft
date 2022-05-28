@@ -4,3 +4,4 @@ libft.h.gch
 *.o
 *.gch
 *.a
+*.so

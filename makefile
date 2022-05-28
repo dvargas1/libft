@@ -6,7 +6,7 @@
 #    By: dvargas <dvargas@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 13:30:55 by dvargas           #+#    #+#              #
-#    Updated: 2022/05/26 14:58:09 by dvargas          ###   ########.fr        #
+#    Updated: 2022/05/27 10:22:03 by dvargas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,10 @@ re:			fclean all
 bonus:		$(NAME)
 	$(CC) $(CFLAGS) -I. $(BONUSES)
 	ar -qs $(NAME) $(BONUS_O)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 .PHONY:		all fclean clean re bonus
 

@@ -6,7 +6,7 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:15:35 by dvargas           #+#    #+#             */
-/*   Updated: 2022/05/26 19:44:09 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/05/27 20:33:33 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s,fd);
-	ft_putchar_fd(1, '\n');
+	ft_putchar_fd('\n', fd);
 }
