@@ -6,7 +6,7 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 15:32:39 by dvargas           #+#    #+#             */
-/*   Updated: 2022/05/26 16:33:19 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/05/30 14:41:50 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	i = 0;
 	d = (char *) dest;
-	s = (char*) src;
+	s = (char *) src;
 	if (s > d)
 	{
 		while (i < n)

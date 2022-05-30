@@ -6,7 +6,7 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 09:52:56 by dvargas           #+#    #+#             */
-/*   Updated: 2022/05/29 09:57:01 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/05/30 18:21:22 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	ft_atoi(const char *str)
 	{
 		if (str[i] == '-')
 			mult *= -1;
+		if (str[i + 1] == '-' || str[i + 1] == '+')
+			return (0);
 		i++;
 	}
 	while (ft_isdigit(str[i]))
@@ -36,6 +38,5 @@ int	ft_atoi(const char *str)
 		nb += str[i] - '0';
 		i++;
 	}
-	nb *= mult;
-	return (nb);
+	return (nb *= mult);
 }

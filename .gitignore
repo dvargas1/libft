@@ -5,3 +5,6 @@ libft.h.gch
 *.gch
 *.a
 *.so
+libftTester/
+libft-war-machine/
+FT_SPLIT_TESTER/
