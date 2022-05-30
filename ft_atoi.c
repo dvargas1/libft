@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/29 09:52:56 by dvargas           #+#    #+#             */
+/*   Updated: 2022/05/29 09:57:01 by dvargas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	long		i;
-	size_t		mult;
-	long		nb;
+	size_t	i;
+	int		mult;
+	int		nb;
 
 	mult = 1;
 	nb = 0;
@@ -15,14 +27,13 @@ int	ft_atoi(const char *str)
 	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-		{
 			mult *= -1;
-		}
-			i++;
+		i++;
 	}
 	while (ft_isdigit(str[i]))
 	{
-		nb = (nb * 10) + (str[i] - '0');
+		nb *= 10;
+		nb += str[i] - '0';
 		i++;
 	}
 	nb *= mult;

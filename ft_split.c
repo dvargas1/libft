@@ -6,7 +6,7 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:54:38 by dvargas           #+#    #+#             */
-/*   Updated: 2022/05/26 19:29:54 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/05/30 10:20:00 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int word_count(char const *s, char sep)
 			wordcount++;
 		i++;
 	}
+	if (wordcount == 1)
+		wordcount = 2;
 	return (wordcount);
 }
 
@@ -64,14 +66,16 @@ char **ft_split(char const *s, char c)
 	int i;
 	int j;
 	
-	str = malloc (sizeof(char*) * word_count(s, c) + 1);
+	str = malloc (sizeof(char*) * word_count(s, c));
+	if (!str)
+		return(NULL);
 	i = 0;
 	j = 0;
 	while (s[i])
 	{
-		while (is_sep(s[i], c))
+		while (s[i] && is_sep(s[i], c))
 				i++;
-		if (!is_sep(s[i], c))
+		if (s[i] && !is_sep(s[i], c))
 		{
 			str[j] = ft_separator(s + i, c);
 			j++;
@@ -79,7 +83,7 @@ char **ft_split(char const *s, char c)
 		while (s[i] && !is_sep(s[i], c))
 			i++;
 	}
-	//str[j] = '\0';
+	str[j] = '\0';
 	return (str);
 }
 
