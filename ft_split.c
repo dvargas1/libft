@@ -6,7 +6,7 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:54:38 by dvargas           #+#    #+#             */
-/*   Updated: 2022/05/30 19:47:41 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/06/02 20:25:33 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_separator(char const *s, char c)
 	len = 0;
 	while (s[len] && !is_sep(s[len], c))
 		len++;
-	new_s = malloc (sizeof(char) * (len + 1));
+	new_s = ft_calloc (sizeof(char), (len + 1));
 	if (!new_s)
 		return (NULL);
 	i = 0;
@@ -63,7 +63,7 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 
-	str = malloc(sizeof(char *) * word_count(s, c) + 1);
+	str = ft_calloc(sizeof(char *), word_count(s, c) + 1);
 	if (!str)
 		return (NULL);
 	i = 0;

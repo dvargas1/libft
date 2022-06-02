@@ -6,7 +6,7 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:42:16 by dvargas           #+#    #+#             */
-/*   Updated: 2022/06/02 10:31:03 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/06/02 14:37:11 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ int main()
 	filosofos -> next = ft_lstnew("Aristoteles");
 	filosofos -> next -> next = ft_lstnew("Platao");
 	t_list *node = filosofos;
-	for (int i = 0; i < 3; i++)
+	while (i < 3)
 	{
 		printf("no %d conteudo:%s endereco proximo %p\n", i, (char *)node->content, node->next );
 		node =node->next;
+		i++;
 	}
 
 	t_list	*elemento4 = ft_lstnew("Freud");

@@ -6,7 +6,7 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 16:54:58 by dvargas           #+#    #+#             */
-/*   Updated: 2022/05/30 15:20:00 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/06/02 20:21:14 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	j;
 
 	i = 0;
-	newstr = malloc(sizeof(s1) + sizeof(s2) + 1);
+	newstr = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!newstr)
 		return (NULL);
 	while (s1[i])

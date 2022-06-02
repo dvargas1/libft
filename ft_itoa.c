@@ -6,7 +6,7 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 20:16:22 by dvargas           #+#    #+#             */
-/*   Updated: 2022/05/30 15:32:40 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/06/02 19:59:45 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	i = nbsize(n);
-	ada = malloc (sizeof(char) * (i + 1));
+	ada = malloc (sizeof(char) * (i + 2));
 	if (!ada)
 		return (NULL);
 	if (nb == 0)

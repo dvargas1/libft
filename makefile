@@ -6,7 +6,7 @@
 #    By: dvargas <dvargas@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 13:30:55 by dvargas           #+#    #+#              #
-#    Updated: 2022/06/01 00:13:24 by dvargas          ###   ########.fr        #
+#    Updated: 2022/06/02 16:20:33 by dvargas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,8 @@ SRCS	=	ft_atoi.c \
 			ft_lstadd_back.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
-			ft_lstiter.c
+			ft_lstiter.c \
+			ft_lstmap.c
 CC	=	cc
 CFLAGS	= -Wall -Wextra -Werror -c
 OBJS = $(SRCS:.c=.o)
