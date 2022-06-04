@@ -6,41 +6,50 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:54:38 by dvargas           #+#    #+#             */
-/*   Updated: 2022/06/02 20:25:33 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/06/04 17:36:57 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_sep(char s, char sep)
+static int	is_sep(char s, char sep)
 {
 	if (sep == s)
 		return (1);
 	return (0);
 }
 
-int	word_count(char const *s, char sep)
+static int	word_count(char const *s, char sep)
 {
 	int	i;
 	int	wordcount;
+	int	found;
 
 	i = 0;
-	wordcount = 1;
+	found = 0;
+	wordcount = 0;
 	while (s[i])
 	{
-		if (is_sep(s[i], sep) && !is_sep(s[i + 1], sep))
+		if (!is_sep(s[i], sep) && !found)
+		{
+			found = 1;
 			wordcount++;
+		}
+		else if (is_sep(s[i], sep))
+			found = 0;
 		i++;
 	}
 	return (wordcount);
 }
 
-char	*ft_separator(char const *s, char c)
+static char	*ft_separator(char const *s, char c)
 {
 	int		i;
 	int		len;
 	char	*new_s;
 
+	if (!s)
+		return (NULL);
 	len = 0;
 	while (s[len] && !is_sep(s[len], c))
 		len++;
@@ -63,6 +72,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 
+	if (!s)
+		return (NULL);
 	str = ft_calloc(sizeof(char *), word_count(s, c) + 1);
 	if (!str)
 		return (NULL);

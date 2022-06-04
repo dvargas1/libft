@@ -55,10 +55,10 @@ int	main(void)
 	printf("\n---- memset ----\n");
 	char str_real[50];
 	strcpy(str_real, "Oi 42");
-	memset(str_real, '-', 20);
+	memset(str_real, '-', 15);
 	char str_test[50];
 	strcpy(str_test, "Oi 42");
-	ft_memset(str_test, '-', 20);
+	ft_memset(str_test, '-', 15);
 	printf("\"Oi 42\" memset ('-', 20) : %s, ft_memset : %s\n", str_test, str_real);
 
 	// TESTE BZERO
@@ -67,7 +67,7 @@ int	main(void)
 	bzero(str_real2, 6);
 	char str_test2[50] = "Olá 42!";
 	ft_bzero(str_test2, 6);
-	printf("\"Hello 42\" bzero (6) bzero: %s, seventh char : %i ft_bzero : %s seventh char : %i\n", str_test2, str_test2[6], str_real2, str_real2[6]);
+	printf("\"Olá 42\" bzero (6) bzero: %s, sexto char : %i ft_bzero : %s sexto char : %i\n", str_test2, str_test2[6], str_real2, str_real2[6]);
 
 	// TESTE MEMCPY
 	printf("\n---- memcpy ----\n");

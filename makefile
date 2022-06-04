@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: dvargas <dvargas@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 13:30:55 by dvargas           #+#    #+#              #
-#    Updated: 2022/06/02 16:20:33 by dvargas          ###   ########.fr        #
+#    Updated: 2022/06/04 17:52:58 by dvargas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,8 +44,8 @@ SRCS	=	ft_atoi.c \
 			ft_substr.c \
 			ft_tolower.c \
 			ft_toupper.c \
-			ft_striteri.c \
-			ft_lstnew.c \
+			ft_striteri.c 
+BONUSES	=	ft_lstnew.c \
 			ft_lstlast.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
@@ -80,9 +80,4 @@ bonus:		$(NAME)
 	$(CC) $(CFLAGS) -I. $(BONUSES)
 	ar -qs $(NAME) $(BONUS_O)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
-
 .PHONY:		all fclean clean re bonus
-
