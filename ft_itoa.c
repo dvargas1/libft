@@ -6,13 +6,13 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 20:16:22 by dvargas           #+#    #+#             */
-/*   Updated: 2022/06/02 19:59:45 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/06/06 14:48:55 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	nbsize(long nb)
+static size_t	nbsize(long nb)
 {
 	size_t	i;
 
@@ -30,8 +30,11 @@ size_t	nbsize(long nb)
 	return (i);
 }
 
-char	*empty(char *ada)
+static char	*empty(char *ada)
 {
+	ada = malloc(2);
+	if (!ada)
+		return (NULL);
 	ada[0] = '0';
 	ada[1] = '\0';
 	return (ada);
@@ -45,7 +48,7 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	i = nbsize(n);
-	ada = malloc (sizeof(char) * (i + 2));
+	ada = malloc (sizeof(char) * (i + 1));
 	if (!ada)
 		return (NULL);
 	if (nb == 0)

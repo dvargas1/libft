@@ -6,13 +6,13 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 19:00:47 by dvargas           #+#    #+#             */
-/*   Updated: 2022/05/30 15:30:00 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/06/06 14:50:37 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_inset(char c, char const *set)
+static int	ft_inset(char c, char const *set)
 {
 	size_t	i;
 
