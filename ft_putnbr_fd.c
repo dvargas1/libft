@@ -6,7 +6,7 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:42:27 by dvargas           #+#    #+#             */
-/*   Updated: 2022/05/30 19:33:48 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/06/06 21:51:42 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		nb *= -1;
 	}
-	if (nb > 10)
+	if (nb >= 10)
 		ft_putnbr_fd((nb / 10), fd);
 	nb = '0' + (nb % 10);
 	ft_putchar_fd(nb, fd);
