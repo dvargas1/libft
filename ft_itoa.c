@@ -6,7 +6,7 @@
 /*   By: dvargas <dvarags@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 20:16:22 by dvargas           #+#    #+#             */
-/*   Updated: 2022/06/06 14:48:55 by dvargas          ###   ########.fr       */
+/*   Updated: 2022/06/08 18:05:07 by dvargas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,14 @@ char	*ft_itoa(int n)
 	long	i;
 	long	nb;
 
+	ada = NULL;
 	nb = n;
 	i = nbsize(n);
+	if (nb == 0)
+		return (empty(ada));
 	ada = malloc (sizeof(char) * (i + 1));
 	if (!ada)
 		return (NULL);
-	if (nb == 0)
-		return (empty(ada));
 	if (nb < 0)
 	{
 		ada[0] = '-';
@@ -62,9 +63,8 @@ char	*ft_itoa(int n)
 	i -= 1;
 	while (nb > 0)
 	{
-		ada[i] = 48 + (nb % 10);
+		ada[i--] = 48 + (nb % 10);
 		nb /= 10;
-		i--;
 	}
 	return (ada);
 }
