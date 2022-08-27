@@ -1,5 +1,5 @@
 
-# Libft
+# Libft :books:
 
 
 Our first project at 42, the idea here is to recreate some functions that already exist in C libraries to accompany us throughout our course.
